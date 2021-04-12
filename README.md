@@ -110,3 +110,5 @@ fetch('https://rickandmortyapi.com/graphql', {
 .then(res => res.json())
 .then(data => console.log(data.data))
 ```
+
+![04-fetch-request](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5yjlc6d38y9yaj5rn2jr.png)
