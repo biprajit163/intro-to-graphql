@@ -32,3 +32,81 @@ cd intro-to-graphql
 Open `index.html` with a development server. If you don't have one install the [Live Server](https://ritwickdey.github.io/vscode-live-server/) VS Code extension at the [following link](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). Open your Dev Tools and go to the console.
 
 ![03-hello-mintbean](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nurmlwvhq4wn976xz7vh.png)
+
+## Fetch
+
+Make a `fetch` request to `https://rickandmortyapi.com/graphql`:
+
+```javascript
+// fetch-api/src/index.js
+
+fetch('https://rickandmortyapi.com/graphql', {})
+```
+
+The request is a `POST` request with `Content-Type` of `application/json`:
+
+```javascript
+// fetch-api/src/index.js
+
+fetch('https://rickandmortyapi.com/graphql', {
+  method: 'POST',
+
+  headers: {
+    "Content-Type": "application/json"
+  },
+})
+```
+
+The `characters` query we wrote above asking for their `name` included in the `body` and [stringified](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify):
+
+```javascript
+// fetch-api/src/index.js
+
+fetch('https://rickandmortyapi.com/graphql', {
+  method: 'POST',
+
+  headers: {
+    "Content-Type": "application/json"
+  },
+
+  body: JSON.stringify({
+    query: `
+      query getCharacters {
+        characters {
+          results {
+            name
+          }
+        }
+      }
+    `
+  })
+})
+```
+
+The `results` displayed with `console.log()`:
+
+```javascript
+// fetch-api/src/index.js
+
+fetch('https://rickandmortyapi.com/graphql', {
+  method: 'POST',
+
+  headers: {
+    "Content-Type": "application/json"
+  },
+
+  body: JSON.stringify({
+    query: `
+      query getCharacters {
+        characters {
+          results {
+            name
+          }
+        }
+      }
+    `
+  })
+})
+.then(res => res.json())
+.then(data => console.log(data.data))
+```
