@@ -1,21 +1,30 @@
-fetch('https://rickandmortyapi.com/graphql', {
-  method: 'POST',
+import React from "react"
+import { render } from "react-dom"
+import { GraphQLClient, gql } from 'graphql-request'
 
-  headers: {
-    "Content-Type": "application/json"
-  },
+async function main() {
+  const endpoint = 'https://rickandmortyapi.com/graphql'
+  const graphQLClient = new GraphQLClient(endpoint)
 
-  body: JSON.stringify({
-    query: `
-      query getCharacters {
-        characters {
-          results {
-            name
-          }
+  const GET_CHARACTERS_QUERY = gql`
+    query getCharacters {
+      characters {
+        results {
+          name
         }
       }
-    `
-  })
-})
-.then(res => res.json())
-.then(data => console.log(data.data))
+    }
+  `
+
+  const data = await graphQLClient.request(GET_CHARACTERS_QUERY)
+  console.log(JSON.stringify(data, undefined, 2))
+}
+
+main()
+
+render(
+  <React.StrictMode>
+    <h1>graphql-request</h1>
+  </React.StrictMode>,
+  document.getElementById("root")
+)
