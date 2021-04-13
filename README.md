@@ -2,6 +2,31 @@
 
 This repo demonstrates how to query the Rick and Morty API through various methods.
 
+## What is GraphQL? 
+
+First, let's back up to what GraphQL actually is. If you're familiar with REST APIs, you're familiar with having to filter data that comes back from the API to get the data that you actually want.
+
+But if you use GraphQL as your query language, you start by querying for the data that you want-- and that's all you get in return! Goodbye, annoying filtering logic!
+
+It's important to understand that GraphQL is organized in terms of types and fields.
+
+To take an example from the docs, if we have:
+
+```graphql
+type Character {
+  name: String!
+  appearsIn: [Episode!]!
+}
+``` 
+
+You can see that we define a `name` and a `appearsIn` field on the type Character, which is an Object type. The defined fields are the only fields that can appear on a query on the Character type. 
+What are the exclamation points there for? They mean that the fields are non-nullable, or that you have to include them in a request. 
+The brackets on `Episode` indicate that it is an array of objects.
+
+Now that you've seen what GraphQL looks like, let's look at an example.
+
+## Let's start with the Rock and Morty API
+
 So if we wanted to take it to the total basics, you'd want to start with actually making a GraphQL query. For example, if you were to go to the following [link](https://rickandmortyapi.com/graphql) you'll see this:
 
 ![01-rick-and-morty-graphiql](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p71t3vphq4c9vt1r3suo.png)
