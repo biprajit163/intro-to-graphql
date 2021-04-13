@@ -25,7 +25,10 @@ The brackets on `Episode` indicate that it is an array of objects.
 
 Now that you've seen what GraphQL looks like, let's look at an example.
 
-## Let's start with the Rock and Morty API
+
+# An Introduction to GraphQL with the Rick and Morty API
+
+This repo demonstrates how to query the Rick and Morty API through various methods.
 
 So if we wanted to take it to the total basics, you'd want to start with actually making a GraphQL query. For example, if you were to go to the following [link](https://rickandmortyapi.com/graphql) you'll see this:
 
@@ -46,6 +49,20 @@ query {
 This returns an array of names.
 
 ![02-character-names](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sdvapzwb74l4bw38p73w.png)
+
+Note that there are a couple of really helpful tabs to the right of the screen:
+
+<img width="800" alt="Screen Shot 2021-04-13 at 9 18 10 AM" src="https://user-images.githubusercontent.com/54046179/114586910-fefd1580-9c39-11eb-91bc-635b26614d9d.png">
+
+The schema tab shows you the Rick and Morty GraphQL schema, which you can also download:
+
+<img width="955" alt="Screen Shot 2021-04-13 at 9 27 13 AM" src="https://user-images.githubusercontent.com/54046179/114587491-93677800-9c3a-11eb-8d37-d07ccd96079a.png">
+
+
+And the docs tab helpfully maps out the queries and types for you:
+
+<img width="967" alt="Screen Shot 2021-04-13 at 9 27 36 AM" src="https://user-images.githubusercontent.com/54046179/114587525-9bbfb300-9c3a-11eb-8edd-28c1161790d9.png">
+
 
 ## Clone this repo
 
