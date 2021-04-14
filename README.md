@@ -8,7 +8,11 @@ First, let's back up to what GraphQL actually is. If you're familiar with REST A
 
 But if you use GraphQL as your query language, you start by querying for the data that you want-- and that's all you get in return! Goodbye, annoying filtering logic!
 
+So what does this query language look like?
+
 It's important to understand that GraphQL is organized in terms of types and fields.
+
+You'll create [object types](https://graphql.org/learn/schema/), and [define fields](https://graphql.org/learn/queries/#fields) on them. 
 
 To take an example from the docs, if we have:
 
@@ -19,11 +23,11 @@ type Character {
 }
 ``` 
 
-You can see that we define a `name` and a `appearsIn` field on the type Character, which is an Object type. The defined fields are the only fields that can appear on a query on the Character type. 
+You can see that we define a `name` and a `appearsIn` field on the type Character, which is an Object type. The defined fields make up the only fields that can appear on a query on the Character type. 
 What are the exclamation points there for? They mean that the fields are non-nullable, or that you have to include them in a request. 
 The brackets on `Episode` indicate that it is an array of objects.
 
-Now that you've seen what GraphQL looks like, let's look at an example.
+Now that you've seen what a GraphQL query looks like, let's look at an example of using GraphQL to query an API.
 
 
 # An Introduction to GraphQL with the Rick and Morty API
